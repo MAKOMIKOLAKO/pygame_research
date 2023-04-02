@@ -40,14 +40,8 @@ class Level:
         self.enemies.draw(self.display_surface)
         self.player.sprite.draw_bullets(self.display_surface)
         collided_with = pygame.sprite.spritecollide(self.player.sprite, self.enemies, True)
-        if collided_with:
-            start_time = time.time()
-            self.player.sprite.speed *= 2
-            while True:
-                current_time = time.time()
-                if current_time - start_time >= 5:
-                    self.player.sprite.speed = 8
-                    break
+
+
         for bullet in self.player.sprite.bullets:
             bullet.explosions = pygame.sprite.Group()
             if pygame.time.get_ticks()-bullet.time>3000:

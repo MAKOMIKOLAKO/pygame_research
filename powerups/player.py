@@ -1,4 +1,5 @@
 import pygame
+import pygame.event
 from bullet import Bullet
 class Player(pygame.sprite.Sprite):
 
